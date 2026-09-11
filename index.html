@@ -1,35 +1,284 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Project Expense Tracker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Expense Tracker</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Project Expense Tracker</h1>
+    <div class="background"></div>
 
-    <div class="expense-form">
-        <input type="text" id="description" placeholder="Expense description">
-        <input type="number" id="amount" placeholder="Amount">
+    <div class="app">
 
-        <select id="category">
-            <option value="Materials">Materials</option>
-            <option value="Travel">Travel</option>
-            <option value="Food">Food</option>
-            <option value="Labour">Labour</option>
-            <option value="Other">Other</option>
-        </select>
+        <!-- Sidebar -->
+        <aside class="sidebar">
 
-        <button onclick="addExpense()">Add Expense</button>
+            <div class="logo">
+                <div class="logo-icon">💰</div>
+                <h2>Expense<span>Pro</span></h2>
+            </div>
+
+            <nav>
+                <a href="#" class="active">📊 Dashboard</a>
+                <a href="#">📁 Projects</a>
+                <a href="#">💸 Expenses</a>
+                <a href="#">📈 Reports</a>
+                <a href="#">⚙️ Settings</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>Project Budget</p>
+                <h3>₹50,000</h3>
+
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+
+                <small>65% used</small>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <!-- Header -->
+            <header>
+
+                <div>
+                    <p class="welcome">Welcome back 👋</p>
+                    <h1>Expense Dashboard</h1>
+                </div>
+
+                <button class="add-btn" onclick="openModal()">
+                    + Add Expense
+                </button>
+
+            </header>
+
+
+            <!-- Cards -->
+            <section class="cards">
+
+                <div class="card">
+                    <div class="card-icon purple">💰</div>
+                    <div>
+                        <p>Total Budget</p>
+                        <h2>₹50,000</h2>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon blue">💸</div>
+                    <div>
+                        <p>Total Expenses</p>
+                        <h2 id="totalExpense">₹0</h2>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon green">📊</div>
+                    <div>
+                        <p>Remaining</p>
+                        <h2 id="remaining">₹50,000</h2>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon pink">📅</div>
+                    <div>
+                        <p>This Month</p>
+                        <h2 id="monthlyExpense">₹0</h2>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Content Grid -->
+            <section class="content-grid">
+
+                <!-- Chart -->
+                <div class="glass-box chart-box">
+
+                    <div class="box-header">
+                        <div>
+                            <p>Expense Overview</p>
+                            <h2>Spending by Category</h2>
+                        </div>
+
+                        <select>
+                            <option>This Month</option>
+                            <option>Last Month</option>
+                            <option>This Year</option>
+                        </select>
+                    </div>
+
+                    <div class="chart">
+
+                        <div class="donut">
+                            <div class="donut-center">
+                                <strong id="chartTotal">₹0</strong>
+                                <span>Total</span>
+                            </div>
+                        </div>
+
+                        <div class="legend">
+
+                            <div>
+                                <span class="dot purple-dot"></span>
+                                Materials
+                                <strong>40%</strong>
+                            </div>
+
+                            <div>
+                                <span class="dot blue-dot"></span>
+                                Travel
+                                <strong>25%</strong>
+                            </div>
+
+                            <div>
+                                <span class="dot pink-dot"></span>
+                                Food
+                                <strong>20%</strong>
+                            </div>
+
+                            <div>
+                                <span class="dot green-dot"></span>
+                                Other
+                                <strong>15%</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Budget -->
+                <div class="glass-box budget-box">
+
+                    <p>Budget Status</p>
+                    <h2>Monthly Budget</h2>
+
+                    <div class="budget-circle">
+                        <span id="budgetPercent">0%</span>
+                    </div>
+
+                    <p class="budget-text">
+                        You have spent <strong id="budgetSpent">₹0</strong>
+                        from your ₹50,000 budget.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Recent Expenses -->
+            <section class="glass-box expenses-box">
+
+                <div class="box-header">
+
+                    <div>
+                        <p>Transactions</p>
+                        <h2>Recent Expenses</h2>
+                    </div>
+
+                    <button class="view-btn">
+                        View All →
+                    </button>
+
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Category</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="expenseTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
     </div>
 
-    <h2>Total Expense: ₹<span id="total">0</span></h2>
 
-    <ul id="expenseList"></ul>
+    <!-- Add Expense Modal -->
+
+    <div class="modal" id="expenseModal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeModal()">×</span>
+
+            <h2>Add New Expense</h2>
+
+            <p>Enter your project expense details.</p>
+
+            <form onsubmit="addExpense(event)">
+
+                <label>Description</label>
+                <input
+                    type="text"
+                    id="description"
+                    placeholder="Example: Office materials"
+                    required
+                >
+
+                <label>Amount</label>
+                <input
+                    type="number"
+                    id="amount"
+                    placeholder="₹ Amount"
+                    required
+                >
+
+                <label>Category</label>
+
+                <select id="category">
+
+                    <option>Materials</option>
+                    <option>Travel</option>
+                    <option>Food</option>
+                    <option>Other</option>
+
+                </select>
+
+                <button type="submit" class="save-btn">
+                    Save Expense
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
 
     <script src="script.js"></script>
 
 </body>
 </html>
-

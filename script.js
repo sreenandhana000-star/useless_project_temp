@@ -1,26 +1,101 @@
 let total = 0;
 
-function addExpense() {
-    let description = document.getElementById("description").value;
-    let amount = Number(document.getElementById("amount").value);
-    let category = document.getElementById("category").value;
+const budget = 50000;
 
-    if (description === "" || amount <= 0) {
-        alert("Please enter valid expense details.");
-        return;
-    }
+function openModal() {
+    document.getElementById("expenseModal").style.display = "flex";
+}
 
-    total = total + amount;
+function closeModal() {
+    document.getElementById("expenseModal").style.display = "none";
+}
 
-    document.getElementById("total").textContent = total;
 
-    let item = document.createElement("li");
+function addExpense(event) {
 
-    item.textContent =
-        description + " - ₹" + amount + " (" + category + ")";
+    event.preventDefault();
 
-    document.getElementById("expenseList").appendChild(item);
+    const description =
+        document.getElementById("description").value;
 
-    document.getElementById("description").value = "";
-    document.getElementById("amount").value = "";
+    const amount =
+        Number(document.getElementById("amount").value);
+
+    const category =
+        document.getElementById("category").value;
+
+
+    total += amount;
+
+
+    // Update total
+
+    document.getElementById("totalExpense")
+        .textContent = "₹" + total.toLocaleString("en-IN");
+
+
+    // Update remaining
+
+    const remaining = budget - total;
+
+    document.getElementById("remaining")
+        .textContent = "₹" + remaining.toLocaleString("en-IN");
+
+
+    // Monthly expense
+
+    document.getElementById("monthlyExpense")
+        .textContent = "₹" + total.toLocaleString("en-IN");
+
+
+    // Chart total
+
+    document.getElementById("chartTotal")
+        .textContent = "₹" + total.toLocaleString("en-IN");
+
+
+    // Budget percentage
+
+    const percentage =
+        Math.min((total / budget) * 100, 100);
+
+    document.getElementById("budgetPercent")
+        .textContent = Math.round(percentage) + "%";
+
+
+    document.getElementById("budgetSpent")
+        .textContent = "₹" + total.toLocaleString("en-IN");
+
+
+    // Add table row
+
+    const table =
+        document.getElementById("expenseTable");
+
+
+    const row =
+        document.createElement("tr");
+
+
+    row.innerHTML = `
+        <td>${description}</td>
+
+        <td>${category}</td>
+
+        <td>${new Date().toLocaleDateString()}</td>
+
+        <td class="amount">
+            ₹${amount.toLocaleString("en-IN")}
+        </td>
+    `;
+
+
+    table.prepend(row);
+
+
+    // Reset form
+
+    document.querySelector("form").reset();
+
+    closeModal();
 }
