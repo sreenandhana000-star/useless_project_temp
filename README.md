@@ -51,11 +51,9 @@ keep track of your spending in one place
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+(https://drive.google.com/file/d/1A9smwsFDtEgmWdayCy2I7yRoRDDCC833/view?usp=drive_link)
+we know that it was an expense
 
-# Additional Demos
-[Add any extra demo materials/links]
 
 ## Team Contributions
 - [sreenandhana]: [desinged and developrd the expense tracker interface,added expense entry features,and helped organize and display daily expenses clearly.]
