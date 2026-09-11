@@ -2,7 +2,7 @@
 
 
 
-# [Project Name] 🎯
+# smart expense tracker🎯
 
 
 ## Basic Details
