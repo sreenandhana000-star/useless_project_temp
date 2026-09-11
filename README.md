@@ -18,7 +18,7 @@
 [Smart expense tracker is a simple web application that helps users record and manage their daily income and expences.it automatically calculates total expences and the remaining balance,making personal money management easier]
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+[]
 
 ### The Solution (that nobody asked for)
 [How are you solving it? Keep it fun!]
