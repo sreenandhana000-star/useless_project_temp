@@ -11,25 +11,27 @@
 
 ### Team Members
 - Team Lead: [sreenandhana] - [ICCS]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
 
 ### Project Description
 [Smart expense tracker is a simple web application that helps users record and manage their daily income and expences.it automatically calculates total expences and the remaining balance,making personal money management easier]
 
 ### The Problem (that doesn't exist)
-[]
+[1.people often forget where and how much they spend their money
+2.tracking daily expenses manually is difficult and time-consuming]
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+[1.an expense tracker helps users record and categorize their daily expence
+2.it shows spending details and helps users manage their money and save better]
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- [HTML, CSS, JavaScript, PHP, SQL]
+- [none]
+- [chart.ds]
+- [Visual Studio Code, XAMPP, MySQL, Web Browser]
+
+
 
 For Hardware:
 - [List main components]
@@ -39,10 +41,11 @@ For Hardware:
 ### Implementation
 For Software:
 # Installation
-[commands]
+[]
 
 # Run
-[commands]
+[\xampp\htdocs\ExpenseTracker]
+
 
 ### Project Documentation
 For Software:
