@@ -26,22 +26,10 @@
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [HTML, CSS, JavaScript, PHP, SQL]
+- [HTML, CSS, JavaScript]
 - [none]
 - [chart.ds]
 - [Visual Studio Code, XAMPP, MySQL, Web Browser]
-
-
-
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
-
-### Implementation
-For Software:
-# Installation
-[]
 
 # Run
 [\xampp\htdocs\ExpenseTracker]
@@ -51,37 +39,15 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot1](https://drive.google.com/file/d/1Jl1BTKWl17oiY5Uj1L77B2IifjXKI9Ez/view?usp=drive_link)
+daily expence track and save money
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot2](https://drive.google.com/file/d/1ohY5yoRu8QlzGKoRzDg4Gq5wnzOFJc8s/view?usp=drive_link)
+a simple application for recording and managing daily expenses
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot3](https://drive.google.com/file/d/1sKmIiLQATRMXAnGAdNeFJe2z06GM6Xup/view?usp=drive_link)
+keep track of your spending in one place
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
@@ -92,9 +58,8 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- [sreenandhana]: [desinged and developrd the expense tracker interface,added expense entry features,and helped organize and display daily expenses clearly.]
+
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
